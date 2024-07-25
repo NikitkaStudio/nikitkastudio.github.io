@@ -1,7 +1,28 @@
 <html>
   <body>
     <h1>Hello World!</h1>
-    <p>This site made with usage of GitHub Pages!</p>
+    <p id="browser"></p>
   </body>
   <link rel="stylesheet" href="style.css"/>
 </html>
+
+<script>
+        function getBrowser() {
+            var userAgent = navigator.userAgent;
+            var browserName;
+
+            if (userAgent.indexOf("Chrome") > -1) {
+                browserName = "Google Chrome";
+            } else if (userAgent.indexOf("Firefox") > -1) {
+                browserName = "Mozilla Firefox";
+            } else if (userAgent.indexOf("Safari") > -1) {
+                browserName = "Apple Safari";
+            } else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
+                browserName = "Internet Explorer";
+            } else {
+                browserName = "Неизвестный браузер";
+            }
+
+            document.getElementById("browser").innerText = "Вы используете: " + browserName;
+        }
+    </script>
